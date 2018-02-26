@@ -17,6 +17,8 @@
 
 -include device/bq/msm8916-common/BoardConfigCommon.mk
 
+DEVICE_PATH := device/bq/vegetalte
+
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 
@@ -37,10 +39,10 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12444651356 # (BOARD_USERDATAIMAGE_PARTITION_SIZE - 16384 for crypto footer)
 
 # Properties
-TARGET_SYSTEM_PROP += device/bq/vegetalte/system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/bq/vegetalte/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Tap to Wake
 TARGET_TAP_TO_WAKE_NODE := "/proc/gesture_open"
